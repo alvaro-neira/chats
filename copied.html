@@ -1,0 +1,572 @@
+<!-- BEGIN CategoriesDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- BEGIN SearchSetup.jspf--><!--
+		Check if the responseSearchType attribute exists in the request object before checking
+		WCParam as the SearchDisplayCmd can change the searchType.
+
+		If the original search term is enclosed by quotes, the responseSearchType attribute will be
+		set to 1001 (which means exact phrase) by the SearchDisplayCmd
+
+		(Constants are defined in
+		com.ibm.commerce.foundation.internal.server.services.search.metadata.solr.SolrSearchServiceConstants)
+
+		The following search types are supported:
+		----------------------------------------------------------------------------------------------------------
+			Match type              |   Search Type		|         Description
+		----------------------------------------------------------------------------------------------------------
+		1.  ANY 					|		0			|  INCLUDE products, kits, bundles
+									|					|  EXCLUDE product level SKUs and category level SKUs
+									|					|
+		2.  EXACT					|		1			|  INCLUDE products, kits, bundles
+									|					|  EXCLUDE product level SKUs and category level SKUs
+									|					|
+		3.  ALL						|		2			|  INCLUDE products, kits, bundles
+									|					|  EXCLUDE product level SKUs and category level SKUs
+									|					|
+		4.  NONE					|		3			|  INCLUDE products, kits, bundles
+									|					|  EXCLUDE product level SKUs and category level SKUs
+									|					|
+		5.  ANY						|		10			|  INCLUDE products, kits, bundles, product level SKUs, category level SKUs
+									|					|  EXCLUDE
+									|					|
+		6.  EXACT					|		11			|  INCLUDE products, kits, bundles, product level SKUs, category level SKUs
+									|					|  EXCLUDE
+									|					|
+		7.  ALL						|		12			|  INCLUDE products, kits, bundles, product level SKUs, category level SKUs
+									|					|  EXCLUDE
+									|					|
+		8.  NONE					|		13			|  INCLUDE products, kits, bundles, product level SKUs, category level SKUs
+									|					|  EXCLUDE
+									|					|
+		9.  ANY						|		100			|  INCLUDE product level SKUs, category level SKUs
+									|					|  EXCLUDE products, kits, bundles
+									|					|
+		10.  EXACT					|		101			|  INCLUDE product level SKUs, category level SKUs
+									|					|  EXCLUDE products, kits, bundles
+									|					|
+		11.  ALL					|		102			|  INCLUDE product level SKUs, category level SKUs
+									|					|  EXCLUDE products, kits, bundles
+									|					|
+		12.  NONE					|		103			|  INCLUDE product level SKUs, category level SKUs
+									|					|  EXCLUDE products, kits, bundles
+									|					|
+		13.  ANY					|		1000		|  INCLUDE products, kits, bundles, category level SKUs
+									|	  (Default)		|  EXCLUDE product level SKUs
+									|					|
+		14.  EXACT					|		1001		|  INCLUDE products, kits, bundles, category level SKUs
+									|					|  EXCLUDE product level SKUs
+									|					|
+		15.  ALL					|		1002		|  INCLUDE products, kits, bundles, category level SKUs
+									|					|  EXCLUDE product level SKUs
+									|					|
+		16.  NONE					|		1003		|  INCLUDE products, kits, bundles, category level SKUs
+									|					|  EXCLUDE product level SKUs
+									|					|
+		17.  ANY					|		10000		|  INCLUDE category level SKUs
+									|					|  EXCLUDE products, kits, bundles, product level SKUs
+									|					|
+		17.  EXACT					|		10001		|  INCLUDE category level SKUs
+									|					|  EXCLUDE products, kits, bundles, product level SKUs
+									|					|
+		18.  ALL					|		10002		|  INCLUDE category level SKUs
+									|					|  EXCLUDE products, kits, bundles, product level SKUs
+									|					|
+		19.  NONE					|		10003		|  INCLUDE category level SKUs
+									|					|  EXCLUDE products, kits, bundles, product level SKUs
+
+	--><!-- END SearchSetup.jspf-->
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+    <title>Aro 26</title>
+    <meta http-equiv="content-type" content="application/xhtml+xml" />
+    <meta http-equiv="cache-control" content="max-age=300" />
+    <meta name="description" content="CategoryShortDescription"/>
+    <meta name="keyword" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="alternate" href="android-app://cl.baytex.ripley/category/Aro 26" />
+    <link rel="alternate" href="ios-app://953575987/category/Aro 26" />
+    <link rel="canonical" href="http://l1092q.ripley.local/ripley-chile/aro-26" />
+    <link rel="stylesheet" type="text/css" href="/wcsstore/DefaultStorefrontAssetStore/mobile20/css/common1_1.css" />
+
+</head>
+<body>
+<!-- TAG MANAGER --><!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-7KGTX"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-7KGTX');</script>
+<!-- End Google Tag Manager --><!-- TAG MANAGER  -->
+<div id="wrapper" class="ucp_active"> <!-- User Control Panel is ON--><!-- BEGIN HeaderDisplay.jspf --><!-- BEGIN CachedHeaderDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf -->
+    <meta name="CommerceSearch" content="storeId_10151" />
+
+    <script type="text/javascript">
+        addEventListener("load", function() { window.scrollTo(0, 1); });
+    </script>
+
+    <!-- Home Page link: MobileIndexURL --><!-- Products link: TopCategoriesDisplayURL --><!-- Store Locator link: mStoreLocatorURL --><!-- My Account link: AccountDispURL -->
+
+    <div class="highlight">
+        <!-- Start Masthead -->
+        <div id="masthead">
+            <div class="left">
+                <a id="mobile_home_link" href="http://l1092q.ripley.local/mobile/es/ripley-chile" title="HOME">
+                    <div class="header_logo"></div>
+                </a>
+            </div>
+            <div class="right">
+
+                <div class="item left">
+                    <a id="store_locator_link" href="http://l1092q.ripley.local/mobile/es/ripley-chile" title="HOME">
+                    </a>
+                </div>
+
+                <div class="divider left"></div>
+                <div class="item left">
+                    <a id="cuenta_link" href="https://l1092q.ripley.local/webapp/wcs/stores/servlet/m20MyAccountDisplay?catalogId=10051&amp;langId=-5&amp;storeId=10151" title="Mi Cuenta">
+                    </a>
+
+                </div>
+                <div class="divider left"></div>
+
+                <div class="divider right"></div>
+                <div class="item left">
+                    <!-- BEGIN MiniShopCartDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf -->
+                    <meta name="CommerceSearch" content="storeId_10151" />
+                    <!-- Mini Shopcart logic begins --><!-- Obtain the number of items --><!-- If we get here from a generic error this service will fail so we need to catch the exception --><!-- Mini Shopcart logic ends --><!-- Shopcart link: ShoppingCartURL -->
+
+                    <a id="shopping_cart_link" href="https://l1092q.ripley.local/webapp/wcs/stores/servlet/AjaxOrderItemDisplayView?mobile=true&amp;catalogId=10051&amp;langId=-5&amp;storeId=10151" title="Carro de la compra">
+                        <!--Carro de la compra-->
+	<span id="cart_items">
+		(0)
+	</span>
+                    </a>
+                    <!-- END MiniShopCartDisplay.jsp -->
+                    <span class="cart_value"></span>
+                </div>
+            </div>
+            <div class="clear_float"></div>
+        </div>
+        <!-- End Masthead -->
+    </div>
+    <!-- END CachedHeaderDisplay.jsp --><!-- END HeaderDisplay.jspf --><!-- BEGIN searchHeader.jspf --><!-- BEGIN CachedSearchHeader.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- Start Search Bar -->
+
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/RipleyFichaMobile.js"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/accounting.min.js"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/MessageHelper.js"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/FuncionesGenerales.js"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/StoreCommonUtilities.js"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/Ripley/RipleyLogonForm.js"></script>
+
+    <script type="text/javascript" src="/wcsstore/dojo172/dojo/dojo.js" djConfig="parseOnLoad: true, isDebug: false, useCommentedJson: true, locale: 'es-es', modulePaths: {'wc':'../wc'}"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/CatalogSearchDisplay.js"></script>
+
+
+
+
+    <div class="highlight">
+
+        <div id="info_bar">
+            <div class="search_wrapper">
+
+                <form id="searchBox" method="get" action="http://l1092q.ripley.local/webapp/wcs/stores/servlet/SearchDisplay?" onsubmit="return CatalogSearchDisplayJS.submitSearch('searchBox');">
+                    <input type="search" id="product_search" name="searchTerm"  placeholder="Ingresa tu b&uacute;squeda" class="product_search" autocomplete="off" onfocus="showHideAutoSuggest(true);"/>
+                    <input type="hidden" name="storeId" value="10151" />
+                    <input type="hidden" name="catalogId" value="10051" />
+                    <input type="hidden" name="langId" value="-5"/>
+                    <input type="hidden" name="resultCatEntryType" value="2" />
+                    <input type="hidden" name="pageSize" value="12"/>
+                    <input type="hidden" name="beginIndex" value="0"/>
+                    <input type="hidden" name="searchSource" value="Q"/>
+                    <input type="hidden" name="sType" value="SimpleSearch"/>
+                    <input type="hidden" name="resultCatEntryType" value="2"/>
+                    <input type="hidden" name="showResultsPage" value="true"/>
+                    <input type="hidden" name="pageView" value=""/>
+                    <input type="hidden" name="viewMode" value="m20"/>
+                    <input type="hidden" name="categoryId" value=""/>
+                    <div class="search_functions">
+                        <div class="search_function_wrapper left">
+                            <input type="submit" id="product_search_submit" name="product_search_submit" value="" class="search_submit"/>
+                        </div>
+                        <div class="clear_float"></div>
+                    </div>
+                    <div class="clear_float"></div>
+                </form>
+
+                <div id="autoSuggestKeywords"></div>
+            </div>
+        </div>
+
+
+        <!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf -->
+        <script type="text/javascript">
+            dojo.addOnLoad(function() {
+                var form = dojo.byId("searchBox");
+                var autoSuggestKeywords = dojo.byId("autoSuggestKeywords");
+                dojo.connect(form, "onkeyup", function(e) {
+
+                    if ( form.product_search.value.length > 1){
+                        dojo.xhrGet({
+                            url: "http://l1092q.ripley.local/webapp/wcs/stores/servlet/m20AutoSuggestView?storeId=10151",
+                            content: {
+                                coreName: "MC_10001_CatalogEntry_es_ES",
+                                serverURL: "http://a920q.ripley.local:3737/solr/MC_10001_CatalogEntry_es_ES",
+                                showHeader: "false",
+                                requesttype: "ajax",
+                                term: document.getElementById("product_search").value
+                            },
+                            load: function(data) {
+
+                                autoSuggestKeywords.innerHTML = data;
+                                showHideAutoSuggest(true);
+
+                            },
+                            error: function(error){
+                                /*no realizar ninguna accion*/
+                            }
+                        });
+                    }else {
+                        var suggestedKeywordResults = dojo.byId("suggestedKeywordResults");
+                        if(suggestedKeywordResults!=null)
+                            suggestedKeywordResults.style.display= 'none';
+                    }
+
+                });
+            });
+
+            function selectAutoSuggest(searchTerm) {
+                document.getElementById("product_search").value = searchTerm;
+                document.getElementById("searchBox").submit();
+            }
+
+            function showHideAutoSuggest(show) {
+                var autoSuggestKeywords = document.getElementById("autoSuggestKeywords");
+                if(show) {
+                    autoSuggestKeywords.style.display = "block";
+                }
+                else {
+                    autoSuggestKeywords.style.display = "none";
+                }
+            }
+
+            document.onclick = function hideAutoSuggest() {
+                if(document.activeElement != document.getElementById("product_search")) {
+                    showHideAutoSuggest(false);
+                }
+            }
+        </script>
+    </div>
+    <!-- End Search Bar --><!-- END CachedSearchHeader.jsp --><!-- END searchHeader.jspf -->
+
+    <div id="department" class="content_box">
+        <!-- Start Breadcrumb Bar -->
+        <div id="breadcrumb" class="item_wrapper_gradient_mod bottom_border">
+            <a id="back_link" href="javascript:if (history.length>0) {history.go(-1);}"><div class="back_arrow left">
+                <div class="arrow_icon">Volver</div>
+            </div></a>
+            <h1 class="page_title left">Aro 26</h1>
+            <div class="clear_float"></div>
+        </div>
+        <!-- End Breadcrumb Bar --><!-- BEGIN FeaturedProductsESpot.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- END FeaturedProductsESpot.jsp --><!-- BEGIN SearchBasedNavigationCategories.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf -->
+
+        <div class="highlight">
+            <!-- use topCategoryId as "top_category" when top_category param is not set --><!-- Page support links begins --><!-- Page support links ends -->
+            <div id="dropdown_filters_container" class="item_wrapper_button">
+                <div class="dropdown_container">
+                    <select id="orderBy" name="orderBy" class="secondary_input input_full_secondary" onchange="document.location = this.value;">
+
+                        <option value="http://l1092q.ripley.local/mobile/es/ripley-chile/sort/aro-26/0">Todos los productos</option>
+
+                        <option value="http://l1092q.ripley.local/mobile/es/ripley-chile/sort/aro-26/1">Ordenar por marca</option>
+
+                        <option value="http://l1092q.ripley.local/mobile/es/ripley-chile/sort/aro-26/2">Ordenar por nombre</option>
+
+                        <option value="http://l1092q.ripley.local/mobile/es/ripley-chile/sort/aro-26/3">Ordenar por precio (menor a mayor)</option>
+
+                        <option value="http://l1092q.ripley.local/mobile/es/ripley-chile/sort/aro-26/4">Ordenar por precio (mayor a menor)</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div id="department_categories">
+                <!-- BEGIN CatalogEntryDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- calvarez_precios mobile_INI --><!-- calvarez_precios mobile_FIN --><!--Mob-Precio producto [catEntryId]:370502/precOferta:69990.0/flagTRipley:false/precioTRipley:0.0 -->
+                <a id="product_370502_link" href="http://l1092q.ripley.local/mobile/es/ripley-chile/despacho-centralizado-2022700090004p" class="no_underline">
+
+                    <div class="item_wrapper">
+                        <div class="product_image_container">
+
+                            <img src="/wcsstore/ripleycl_CAT_AS/http://ripley.cigoto.cl/nuevo_flujo/img/club-novios.jpg" alt=" " border="0" width="60"/>
+
+                        </div>
+
+
+
+
+                        <div class="product_info_container">
+                            <div class="bold">DESPACHO CENTRALIZADO</div>
+
+                            <div class="bold left">
+
+                                <div class="price txt_rojo offerprice bold">
+                                    <!-- Muestra precio Of -->$69.990
+                                </div>
+
+                            </div>
+                            <!-- END RipleyCatalogEntryPriceDisplayCommon.jspf-->
+                        </div>
+                        <div class="forward_arrow_icon flecha_grisblanca_int"></div>
+                        <div class="clear_float"></div>
+                    </div>
+
+                </a>
+                <!-- calvarez: Remover variables de CatalogEntry_INI --><!-- calvarez: Remover variables de CatalogEntry_FIN --><!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- calvarez_precios mobile_INI --><!-- calvarez_precios mobile_FIN --><!--Mob-Precio producto [catEntryId]:370503/precOferta:0.0/flagTRipley:false/precioTRipley:0.0 -->
+                <div class="item_wrapper">
+                    <div class="product_image_container">
+
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2022700100000/2022700100000.jpg" alt=" " border="0" width="60"/>
+
+                    </div>
+
+
+
+
+                    <div class="product_info_container">
+                        <div class="bold">BICICLETA ELECTRICA PLEGABLE NEGRO</div>
+
+                        <div class="unavailable">
+                            <p class="top_padding10px" >
+                                <label>
+                                    Temporalmente no disponible.
+                                </label>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="forward_arrow_icon flecha_grisblanca_int"></div>
+                    <div class="clear_float"></div>
+                </div>
+                <!-- calvarez: Remover variables de CatalogEntry_INI --><!-- calvarez: Remover variables de CatalogEntry_FIN --><!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- calvarez_precios mobile_INI --><!-- calvarez_precios mobile_FIN --><!--Mob-Precio producto [catEntryId]:370504/precOferta:0.0/flagTRipley:false/precioTRipley:0.0 -->
+                <div class="item_wrapper">
+                    <div class="product_image_container">
+
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2022700120008/2022700120008.jpg" alt=" " border="0" width="60"/>
+
+                    </div>
+
+
+
+
+                    <div class="product_info_container">
+                        <div class="bold">BICICLETA ELECTRICA PLEGABLE NEPLA</div>
+
+                        <div class="unavailable">
+                            <p class="top_padding10px" >
+                                <label>
+                                    Temporalmente no disponible.
+                                </label>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="forward_arrow_icon flecha_grisblanca_int"></div>
+                    <div class="clear_float"></div>
+                </div>
+                <!-- calvarez: Remover variables de CatalogEntry_INI --><!-- calvarez: Remover variables de CatalogEntry_FIN --><!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- calvarez_precios mobile_INI --><!-- calvarez_precios mobile_FIN --><!--Mob-Precio producto [catEntryId]:370508/precOferta:0.0/flagTRipley:false/precioTRipley:0.0 -->
+                <div class="item_wrapper">
+                    <div class="product_image_container">
+
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2022700220005/2022700220005.jpg" alt=" " border="0" width="60"/>
+
+                    </div>
+
+
+
+
+                    <div class="product_info_container">
+                        <div class="bold">BICICLETA 16 DISNEY  CARS NEGRA</div>
+
+                        <div class="unavailable">
+                            <p class="top_padding10px" >
+                                <label>
+                                    Temporalmente no disponible.
+                                </label>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="forward_arrow_icon flecha_grisblanca_int"></div>
+                    <div class="clear_float"></div>
+                </div>
+                <!-- calvarez: Remover variables de CatalogEntry_INI --><!-- calvarez: Remover variables de CatalogEntry_FIN --><!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- calvarez_precios mobile_INI --><!-- calvarez_precios mobile_FIN --><!--Mob-Precio producto [catEntryId]:441551/precOferta:0.0/flagTRipley:false/precioTRipley:0.0 -->
+                <div class="item_wrapper">
+                    <div class="product_image_container">
+
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2000303545794/2000303545794.jpg" alt=" " border="0" width="60"/>
+
+                    </div>
+
+
+
+
+                    <div class="product_info_container">
+                        <div class="bold">BIC ELIPTICA MAGNETICA ERGONOMETRICA</div>
+
+                        <div class="unavailable">
+                            <p class="top_padding10px" >
+                                <label>
+                                    Temporalmente no disponible.
+                                </label>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="forward_arrow_icon flecha_grisblanca_int"></div>
+                    <div class="clear_float"></div>
+                </div>
+                <!-- calvarez: Remover variables de CatalogEntry_INI --><!-- calvarez: Remover variables de CatalogEntry_FIN --><!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- calvarez_precios mobile_INI --><!-- calvarez_precios mobile_FIN --><!--Mob-Precio producto [catEntryId]:441553/precOferta:0.0/flagTRipley:false/precioTRipley:0.0 -->
+                <div class="item_wrapper">
+                    <div class="product_image_container">
+
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2000303545800/2000303545800.jpg" alt=" " border="0" width="60"/>
+
+                    </div>
+
+
+
+
+                    <div class="product_info_container">
+                        <div class="bold">ELIPTICA E-GLIDE BE-5980 ROJO/GRIS</div>
+
+                        <div class="unavailable">
+                            <p class="top_padding10px" >
+                                <label>
+                                    Temporalmente no disponible.
+                                </label>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="forward_arrow_icon flecha_grisblanca_int"></div>
+                    <div class="clear_float"></div>
+                </div>
+                <!-- calvarez: Remover variables de CatalogEntry_INI --><!-- calvarez: Remover variables de CatalogEntry_FIN --><!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- calvarez_precios mobile_INI --><!-- calvarez_precios mobile_FIN --><!--Mob-Precio producto [catEntryId]:441557/precOferta:0.0/flagTRipley:false/precioTRipley:0.0 -->
+                <div class="item_wrapper">
+                    <div class="product_image_container">
+
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2000303545824/2000303545824.jpg" alt=" " border="0" width="60"/>
+
+                    </div>
+
+
+
+
+                    <div class="product_info_container">
+                        <div class="bold">ELIPTICA MAGNETICA  BY-430 PRO</div>
+
+                        <div class="unavailable">
+                            <p class="top_padding10px" >
+                                <label>
+                                    Temporalmente no disponible.
+                                </label>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="forward_arrow_icon flecha_grisblanca_int"></div>
+                    <div class="clear_float"></div>
+                </div>
+                <!-- calvarez: Remover variables de CatalogEntry_INI --><!-- calvarez: Remover variables de CatalogEntry_FIN --><!-- END CatalogEntryDisplay.jsp --><!-- BEGIN CatalogEntryDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- calvarez_precios mobile_INI --><!-- calvarez_precios mobile_FIN --><!--Mob-Precio producto [catEntryId]:441567/precOferta:0.0/flagTRipley:false/precioTRipley:0.0 -->
+                <div class="item_wrapper">
+                    <div class="product_image_container">
+
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2000303569080/2000303569080.jpg" alt=" " border="0" width="60"/>
+
+                    </div>
+
+
+
+
+                    <div class="product_info_container">
+                        <div class="bold">MTM 3900 NEGRO/GRIS 19,5</div>
+
+                        <div class="unavailable">
+                            <p class="top_padding10px" >
+                                <label>
+                                    Temporalmente no disponible.
+                                </label>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="forward_arrow_icon flecha_grisblanca_int"></div>
+                    <div class="clear_float"></div>
+                </div>
+                <!-- calvarez: Remover variables de CatalogEntry_INI --><!-- calvarez: Remover variables de CatalogEntry_FIN --><!-- END CatalogEntryDisplay.jsp -->
+            </div>
+            <input type="hidden" id="totalItemCount" name="totalItemCount" value="8"/>
+
+
+        </div>
+        <!-- END SearchBasedNavigationCategories.jsp -->
+    </div>
+
+    <!-- BEGIN userPanelFooter.jspf --><!-- BEGIN CachedUserPanelFooter.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- My Account link: AccountDispURL --><!-- Wish List link: WishListDispURL --><!-- Store Locator link: mStoreLocatorURL --><!-- Products link: TopCategoriesDisplayURL --><!-- Start User Panel -->
+    <div class="clear_float"></div>
+    <div id="footer">
+        <div class="highlight">
+            <div id="user_panel">
+                <div class="item left rightborder">
+                    <a id="my_account_link" href="https://l1092q.ripley.local/webapp/wcs/stores/servlet/m20MyAccountDisplay?catalogId=10051&amp;langId=-5&amp;storeId=10151" title="Mi Cuenta">
+                        Mi Cuenta
+                    </a>
+                </div>
+                <div class="item left leftborder rightborder">
+                    <a title="Productos" href="http://l1092q.ripley.local/mobile/es/ripley-chile/top-categories" id="location_check_in_link">
+                        Productos
+                    </a>
+
+                </div>
+                <!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- Compare Product logic begins --><!-- Compare Product logic ends --><!-- Compare Product link: ProductCompareResultView -->
+
+                <div class="item left leftborder">
+                    <a id="compare_products_link" href="http://l1092q.ripley.local/webapp/wcs/stores/servlet/m20ProductCompareResultView?catalogId=10051&amp;langId=-5&amp;storeId=10151" title="Comparar">
+                        Comparar
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- End User Panel --><!-- END CachedUserPanelFooter.jsp --><!-- END userPanelFooter.jspf --><!-- BEGIN FooterDisplay.jspf --><!-- BEGIN CachedFooterDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- Logon link: logOnURL --><!-- Contact Us link: ContactUSURL --><!-- Help link:  --><!-- Settings link:  --><!-- Full Site link:  --><!-- Terms link:  --><!--Start privacy policy link container -->
+
+        <div id="privacy_policy">
+
+            <div class="item left divider">
+                <a title="Novios" href="http://novios.ripley.cl/noviosRipley/?utm_source=novios&amp;utm_medium=huincha1De" id="help_display_link">
+                    Novios
+                </a>
+            </div>
+            <div class="item left divider leftborder">
+                <a id="desktop_site_link" href="http://l1092q.ripley.local/es/ripley-chile" title="Full site">
+                    Full site
+                </a>
+            </div>
+
+
+
+            <div class="item left leftborder">
+                <a title="Tarjeta" href="https://www.ripley.cl/tarjeta" id="privacy_display_link">
+                    Tarjeta
+                </a>
+            </div>
+
+
+        </div>
+        <p class="legal">Comercial ECCSA S.A., Rut N&deg; 83.382.700-6, domiciliada en Avda. Kennedy N&deg; 5413, piso 6, Edificio Cerro Colorado, Comuna de Las Condes, Santiago. Servicio al Cliente 600 600 02 02 Fax. (56 2) 6785060 Mail: contacto@ripley.cl</p>
+    </div> <!-- close div for <div id="footer"> -->
+    <!--End privacy policy link container --><!-- END CachedFooterDisplay.jsp --><!-- END FooterDisplay.jspf -->
+</div>
+</body>
+</html>
+
+<!-- END CategoriesDisplay.jsp -->
