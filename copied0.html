@@ -1,3 +1,78 @@
+<!-- BEGIN CategoriesDisplay.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- BEGIN SearchSetup.jspf--><!--
+		Check if the responseSearchType attribute exists in the request object before checking
+		WCParam as the SearchDisplayCmd can change the searchType.
+
+		If the original search term is enclosed by quotes, the responseSearchType attribute will be
+		set to 1001 (which means exact phrase) by the SearchDisplayCmd
+
+		(Constants are defined in
+		com.ibm.commerce.foundation.internal.server.services.search.metadata.solr.SolrSearchServiceConstants)
+
+		The following search types are supported:
+		----------------------------------------------------------------------------------------------------------
+			Match type              |   Search Type		|         Description
+		----------------------------------------------------------------------------------------------------------
+		1.  ANY 					|		0			|  INCLUDE products, kits, bundles
+									|					|  EXCLUDE product level SKUs and category level SKUs
+									|					|
+		2.  EXACT					|		1			|  INCLUDE products, kits, bundles
+									|					|  EXCLUDE product level SKUs and category level SKUs
+									|					|
+		3.  ALL						|		2			|  INCLUDE products, kits, bundles
+									|					|  EXCLUDE product level SKUs and category level SKUs
+									|					|
+		4.  NONE					|		3			|  INCLUDE products, kits, bundles
+									|					|  EXCLUDE product level SKUs and category level SKUs
+									|					|
+		5.  ANY						|		10			|  INCLUDE products, kits, bundles, product level SKUs, category level SKUs
+									|					|  EXCLUDE
+									|					|
+		6.  EXACT					|		11			|  INCLUDE products, kits, bundles, product level SKUs, category level SKUs
+									|					|  EXCLUDE
+									|					|
+		7.  ALL						|		12			|  INCLUDE products, kits, bundles, product level SKUs, category level SKUs
+									|					|  EXCLUDE
+									|					|
+		8.  NONE					|		13			|  INCLUDE products, kits, bundles, product level SKUs, category level SKUs
+									|					|  EXCLUDE
+									|					|
+		9.  ANY						|		100			|  INCLUDE product level SKUs, category level SKUs
+									|					|  EXCLUDE products, kits, bundles
+									|					|
+		10.  EXACT					|		101			|  INCLUDE product level SKUs, category level SKUs
+									|					|  EXCLUDE products, kits, bundles
+									|					|
+		11.  ALL					|		102			|  INCLUDE product level SKUs, category level SKUs
+									|					|  EXCLUDE products, kits, bundles
+									|					|
+		12.  NONE					|		103			|  INCLUDE product level SKUs, category level SKUs
+									|					|  EXCLUDE products, kits, bundles
+									|					|
+		13.  ANY					|		1000		|  INCLUDE products, kits, bundles, category level SKUs
+									|	  (Default)		|  EXCLUDE product level SKUs
+									|					|
+		14.  EXACT					|		1001		|  INCLUDE products, kits, bundles, category level SKUs
+									|					|  EXCLUDE product level SKUs
+									|					|
+		15.  ALL					|		1002		|  INCLUDE products, kits, bundles, category level SKUs
+									|					|  EXCLUDE product level SKUs
+									|					|
+		16.  NONE					|		1003		|  INCLUDE products, kits, bundles, category level SKUs
+									|					|  EXCLUDE product level SKUs
+									|					|
+		17.  ANY					|		10000		|  INCLUDE category level SKUs
+									|					|  EXCLUDE products, kits, bundles, product level SKUs
+									|					|
+		17.  EXACT					|		10001		|  INCLUDE category level SKUs
+									|					|  EXCLUDE products, kits, bundles, product level SKUs
+									|					|
+		18.  ALL					|		10002		|  INCLUDE category level SKUs
+									|					|  EXCLUDE products, kits, bundles, product level SKUs
+									|					|
+		19.  NONE					|		10003		|  INCLUDE category level SKUs
+									|					|  EXCLUDE products, kits, bundles, product level SKUs
+
+	--><!-- END SearchSetup.jspf-->
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
@@ -10,7 +85,7 @@
     <link rel="alternate" href="android-app://cl.baytex.ripley/category/Aro 26" />
     <link rel="alternate" href="ios-app://953575987/category/Aro 26" />
     <link rel="canonical" href="http://l1092q.ripley.local/ripley-chile/aro-26" />
-    <link rel="stylesheet" type="text/css" href="http://www.ripley.cl/wcsstore/DefaultStorefrontAssetStore/mobile20/css/common1_1.css" />
+    <link rel="stylesheet" type="text/css" href="/wcsstore/DefaultStorefrontAssetStore/mobile20/css/common1_1.css" />
 
 </head>
 <body>
@@ -77,15 +152,15 @@
     </div>
     <!-- END CachedHeaderDisplay.jsp --><!-- END HeaderDisplay.jspf --><!-- BEGIN searchHeader.jspf --><!-- BEGIN CachedSearchHeader.jsp --><!-- BEGIN JSTLEnvironmentSetup.jspf --><!-- END JSTLEnvironmentSetup.jspf --><!-- Start Search Bar -->
 
-    <script type="text/javascript" src="http://www.ripley.cl/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/RipleyFichaMobile.js"></script>
-    <script type="text/javascript" src="http://www.ripley.cl/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/accounting.min.js"></script>
-    <script type="text/javascript" src="http://www.ripley.cl/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/MessageHelper.js"></script>
-    <script type="text/javascript" src="http://www.ripley.cl/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/FuncionesGenerales.js"></script>
-    <script type="text/javascript" src="http://www.ripley.cl/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/StoreCommonUtilities.js"></script>
-    <script type="text/javascript" src="http://www.ripley.cl/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/Ripley/RipleyLogonForm.js"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/RipleyFichaMobile.js"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/accounting.min.js"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/MessageHelper.js"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/FuncionesGenerales.js"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/StoreCommonUtilities.js"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/Ripley/RipleyLogonForm.js"></script>
 
-    <script type="text/javascript" src="http://www.ripley.cl/wcsstore/dojo172/dojo/dojo.js" djConfig="parseOnLoad: true, isDebug: false, useCommentedJson: true, locale: 'es-es', modulePaths: {'wc':'../wc'}"></script>
-    <script type="text/javascript" src="http://www.ripley.cl/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/CatalogSearchDisplay.js"></script>
+    <script type="text/javascript" src="/wcsstore/dojo172/dojo/dojo.js" djConfig="parseOnLoad: true, isDebug: false, useCommentedJson: true, locale: 'es-es', modulePaths: {'wc':'../wc'}"></script>
+    <script type="text/javascript" src="/wcsstore/DefaultStorefrontAssetStore/mobile20/javascript/CatalogSearchDisplay.js"></script>
 
 
 
@@ -222,7 +297,7 @@
                     <div class="item_wrapper">
                         <div class="product_image_container">
 
-                            <img src="http://www.ripley.cl/wcsstore/ripleycl_CAT_AS/Attachment/WOP/D199/2000349375461/2000349375461.jpg" alt=" " border="0" width="60"/>
+                            <img src="/wcsstore/ripleycl_CAT_AS/http://ripley.cigoto.cl/nuevo_flujo/img/club-novios.jpg" alt=" " border="0" width="60"/>
 
                         </div>
 
@@ -250,7 +325,7 @@
                 <div class="item_wrapper">
                     <div class="product_image_container">
 
-                        <img src="http://www.ripley.cl/wcsstore/ripleycl_CAT_AS/Attachment/WOP/D347/2000355214792/2000355214792.jpg" alt=" " border="0" width="60"/>
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2022700100000/2022700100000.jpg" alt=" " border="0" width="60"/>
 
                     </div>
 
@@ -276,7 +351,7 @@
                 <div class="item_wrapper">
                     <div class="product_image_container">
 
-                        <img src="http://www.ripley.cl/wcsstore/ripleycl_CAT_AS/Attachment/WOP/D199/2000349375447/2000349375447.jpg" alt=" " border="0" width="60"/>
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2022700120008/2022700120008.jpg" alt=" " border="0" width="60"/>
 
                     </div>
 
@@ -302,7 +377,7 @@
                 <div class="item_wrapper">
                     <div class="product_image_container">
 
-                        <img src="http://www.ripley.cl/wcsstore/ripleycl_CAT_AS/Attachment/WOP/D126/2000353108970/2000353108970.jpg" alt=" " border="0" width="60"/>
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2022700220005/2022700220005.jpg" alt=" " border="0" width="60"/>
 
                     </div>
 
@@ -328,7 +403,7 @@
                 <div class="item_wrapper">
                     <div class="product_image_container">
 
-                        <img src="http://www.ripley.cl/wcsstore/ripleycl_CAT_AS/Attachment/WOP/D126/2000351660524/2000351660524.jpg" alt=" " border="0" width="60"/>
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2000303545794/2000303545794.jpg" alt=" " border="0" width="60"/>
 
                     </div>
 
@@ -354,7 +429,7 @@
                 <div class="item_wrapper">
                     <div class="product_image_container">
 
-                        <img src="http://www.ripley.cl/wcsstore/ripleycl_CAT_AS/Attachment/WOP/D126/2000355459957/2000355459957.jpg" alt=" " border="0" width="60"/>
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2000303545800/2000303545800.jpg" alt=" " border="0" width="60"/>
 
                     </div>
 
@@ -380,7 +455,7 @@
                 <div class="item_wrapper">
                     <div class="product_image_container">
 
-                        <img src="http://www.ripley.cl/wcsstore/ripleycl_CAT_AS/Attachment/WOP/D126/2000349427627/2000349427627.jpg" alt=" " border="0" width="60"/>
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2000303545824/2000303545824.jpg" alt=" " border="0" width="60"/>
 
                     </div>
 
@@ -406,7 +481,7 @@
                 <div class="item_wrapper">
                     <div class="product_image_container">
 
-                        <img src="http://www.ripley.cl/wcsstore/ripleycl_CAT_AS/Attachment/WOP/D126/2000355453757/2000355453757.jpg" alt=" " border="0" width="60"/>
+                        <img src="/wcsstore/ripleycl_CAT_AS/Attachment/WOP/2000303569080/2000303569080.jpg" alt=" " border="0" width="60"/>
 
                     </div>
 
